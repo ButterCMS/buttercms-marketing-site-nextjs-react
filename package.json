@@ -5,9 +5,9 @@
   "author": "ghoshnirmalya",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next src",
+    "build": "next build src",
+    "start": "next start src"
   },
   "dependencies": {
     "next": "7.0.2",
