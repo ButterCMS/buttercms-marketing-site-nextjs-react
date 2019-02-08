@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from "next/document";
 
-import Favicon from "../assets/images/favicon.ico";
+import Favicon from "../src/assets/images/favicon.ico";
 
 export default class MyDocument extends Document {
   render() {

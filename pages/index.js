@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from "react";
 import Head from "next/head";
 
-import Clients from "../components/clients";
-import Cta from "../components/cta";
-import Features from "../components/features";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import Hero from "../components/hero";
-import Pricing from "../components/pricing";
-import Testimonials from "../components/testimonials";
+import Clients from "../src/components/clients";
+import Cta from "../src/components/cta";
+import Features from "../src/components/features";
+import Footer from "../src/components/footer";
+import Header from "../src/components/header";
+import Hero from "../src/components/hero";
+import Pricing from "../src/components/pricing";
+import Testimonials from "../src/components/testimonials";
 
 class Index extends Component {
   render() {
