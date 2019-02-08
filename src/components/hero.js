@@ -1,6 +1,19 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import withButter from "../lib/with-butter-cms";
 
 class Hero extends Component {
+  componentDidMount() {
+    this.props.butter.page
+      .retrieve("*", "index")
+      .then(function(resp) {
+        console.log(resp.data);
+      })
+      .catch(function(resp) {
+        console.log(resp);
+      });
+  }
+
   render() {
     return (
       <section className="hero">
@@ -30,4 +43,8 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+Hero.propTypes = {
+  butter: PropTypes.object.isRequired
+};
+
+export default withButter(Hero);

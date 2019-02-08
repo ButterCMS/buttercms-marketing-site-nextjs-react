@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "buttercms": "^1.1.4",
+    "dotenv": "^6.2.0",
     "next": "7.0.2",
     "next-images": "^1.0.4",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
