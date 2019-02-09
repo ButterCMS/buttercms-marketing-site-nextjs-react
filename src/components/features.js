@@ -1,80 +1,60 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import withButter from "../lib/with-butter-cms";
 
 import FeatureIcon1 from "../assets/images/feature-icon-01.svg";
-import FeatureIcon2 from "../assets/images/feature-icon-02.svg";
-import FeatureIcon3 from "../assets/images/feature-icon-03.svg";
-import FeatureIcon4 from "../assets/images/feature-icon-04.svg";
 
-class Features extends Component {
-  render() {
-    return (
-      <section className="features section text-center">
-        <div className="container">
-          <div className="features-inner section-inner has-top-divider">
-            <div className="features-header text-center">
-              <div className="container-sm">
-                <h2 className="section-title mt-0">Meet Blue</h2>
-                <p className="section-paragraph mb-0">
-                  Lorem ipsum is common placeholder text used to demonstrate the
-                  graphic elements of a document or visual presentation.
-                </p>
-              </div>
-            </div>
-            <div className="features-wrap">
-              <div className="feature is-revealing">
-                <div className="feature-inner">
-                  <div className="feature-icon">
-                    <img src={FeatureIcon1} alt="Feature 01" />
-                  </div>
-                  <h4 className="feature-title">Lorem Ipsum</h4>
-                  <p className="text-sm">
-                    often arouses curiosity due to its resemblance to
-                    classNameical latin
-                  </p>
-                </div>
-              </div>
-              <div className="feature is-revealing">
-                <div className="feature-inner">
-                  <div className="feature-icon">
-                    <img src={FeatureIcon2} alt="Feature 02" />
-                  </div>
-                  <h4 className="feature-title">Lorem Ipsum</h4>
-                  <p className="text-sm">
-                    often arouses curiosity due to its resemblance to
-                    classNameical latin
-                  </p>
-                </div>
-              </div>
-              <div className="feature is-revealing">
-                <div className="feature-inner">
-                  <div className="feature-icon">
-                    <img src={FeatureIcon3} alt="Feature 03" />
-                  </div>
-                  <h4 className="feature-title">Lorem Ipsum</h4>
-                  <p className="text-sm">
-                    often arouses curiosity due to its resemblance to
-                    classNameical latin
-                  </p>
-                </div>
-              </div>
-              <div className="feature is-revealing">
-                <div className="feature-inner">
-                  <div className="feature-icon">
-                    <img src={FeatureIcon4} alt="Feature 04" />
-                  </div>
-                  <h4 className="feature-title">Lorem Ipsum</h4>
-                  <p className="text-sm">
-                    often arouses curiosity due to its resemblance to
-                    classNameical latin
-                  </p>
-                </div>
-              </div>
+function Features(props) {
+  const [fields, setFields] = useState({ fields: [] });
+  const [error, setError] = useState({ data: {} });
+  const fetchData = async () => {
+    try {
+      const response = await props.butter.page.retrieve("*", "features");
+
+      setFields(response.data.data.fields);
+    } catch (error) {
+      setError(error.data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <section className="features section text-center">
+      <div className="container">
+        <div className="features-inner section-inner has-top-divider">
+          <div className="features-header text-center">
+            <div className="container-sm">
+              <h2 className="section-title mt-0">{fields.title}</h2>
+              <p className="section-paragraph mb-0">{fields.sub_title}</p>
             </div>
           </div>
+          <div className="features-wrap">
+            {fields.features &&
+              fields.features.map((feature, index) => {
+                return (
+                  <div className="feature" key={index}>
+                    <div className="feature-inner">
+                      <div className="feature-icon">
+                        <img src={FeatureIcon1} alt="Feature 01" />
+                      </div>
+                      <h4 className="feature-title">{feature.title}</h4>
+                      <p className="text-sm">{feature.sub_title}</p>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }
 
-export default Features;
+Features.propTypes = {
+  butter: PropTypes.object.isRequired
+};
+
+export default withButter(Features);
