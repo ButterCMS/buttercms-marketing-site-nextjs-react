@@ -8,12 +8,13 @@ function Clients({ data }) {
         <div className="clients-inner section-inner has-top-divider">
           <div className="container-sm">
             <ul className="list-reset mb-0">
-              <li>
-                <img src={data.fields.client_1} alt="Client logo" />
-              </li>
-              <li>
-                <img src={data.fields.client_2} alt="Client logo" />
-              </li>
+              {data.fields.clients.map((client, index) => {
+                return (
+                  <li key={index}>
+                    <img src={client.image} alt={client.name} />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
