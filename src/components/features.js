@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import FeatureIcon1 from "../assets/images/feature-icon-01.svg";

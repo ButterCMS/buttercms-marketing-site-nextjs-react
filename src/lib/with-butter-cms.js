@@ -9,7 +9,8 @@ class DataProvider extends Component {
     loading: true,
     heroData: {},
     clientsData: {},
-    featuresData: {}
+    featuresData: {},
+    testimonialsData: {}
   };
 
   async componentDidMount() {
@@ -21,13 +22,15 @@ class DataProvider extends Component {
       const response = await Promise.all([
         butter.page.retrieve("*", "hero"),
         butter.page.retrieve("*", "clients"),
-        butter.page.retrieve("*", "features")
+        butter.page.retrieve("*", "features"),
+        butter.page.retrieve("*", "testimonials")
       ]);
 
       this.setState({
         heroData: response[0].data.data,
         clientsData: response[1].data.data,
         featuresData: response[2].data.data,
+        testimonialsData: response[3].data.data,
         loading: false
       });
     } catch (error) {
@@ -42,7 +45,8 @@ class DataProvider extends Component {
           loading: this.state.loading,
           heroData: this.state.heroData,
           clientsData: this.state.clientsData,
-          featuresData: this.state.featuresData
+          featuresData: this.state.featuresData,
+          testimonialsData: this.state.testimonialsData
         }}
       >
         {this.props.children}

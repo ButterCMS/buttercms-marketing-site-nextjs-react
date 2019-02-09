@@ -20,7 +20,13 @@ class Index extends Component {
           <title>Marketing Site using ButterCMS and Next.js</title>
         </Head>
         <DataConsumer>
-          {({ loading, heroData, clientsData, featuresData }) => {
+          {({
+            loading,
+            heroData,
+            clientsData,
+            featuresData,
+            testimonialsData
+          }) => {
             if (loading)
               return (
                 <div className="loading">
@@ -43,7 +49,7 @@ class Index extends Component {
                 <Hero data={heroData} />
                 <Clients data={clientsData} />
                 <Features data={featuresData} />
-                <Testimonials />
+                <Testimonials data={testimonialsData} />
                 <Pricing />
                 <Cta />
               </Fragment>
