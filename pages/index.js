@@ -25,7 +25,8 @@ class Index extends Component {
             heroData,
             clientsData,
             featuresData,
-            testimonialsData
+            testimonialsData,
+            pricingData
           }) => {
             if (loading)
               return (
@@ -50,7 +51,7 @@ class Index extends Component {
                 <Clients data={clientsData} />
                 <Features data={featuresData} />
                 <Testimonials data={testimonialsData} />
-                <Pricing />
+                <Pricing data={pricingData} />
                 <Cta />
               </Fragment>
             );
