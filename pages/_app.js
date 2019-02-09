@@ -5,8 +5,9 @@ import dynamic from "next/dynamic";
 import "../src/assets/css/style.css";
 import Footer from "../src/components/footer";
 import Header from "../src/components/header";
+import DataProvider from "../src/lib/with-butter-cms";
 
-export default class MyApp extends App {
+class MyApp extends App {
   componentDidMount() {
     import("../src/assets/js/main.js");
   }
@@ -19,7 +20,9 @@ export default class MyApp extends App {
         <div className="body-wrap boxed-container">
           <Header />
           <main>
-            <Component {...pageProps} />
+            <DataProvider>
+              <Component {...pageProps} />
+            </DataProvider>
           </main>
           <Footer />
         </div>
@@ -27,3 +30,5 @@ export default class MyApp extends App {
     );
   }
 }
+
+export default MyApp;

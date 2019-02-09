@@ -9,7 +9,7 @@ class Pricing extends Component {
             <h2 className="section-title mt-0 text-center">Pricing</h2>
             <div>
               <div className="pricing-tables-wrap">
-                <div className="pricing-table is-revealing">
+                <div className="pricing-table">
                   <div className="pricing-table-inner">
                     <div className="pricing-table-main">
                       <div className="pricing-table-header mb-24 pb-24">
@@ -51,7 +51,7 @@ class Pricing extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="pricing-table is-revealing">
+                <div className="pricing-table">
                   <div className="pricing-table-inner">
                     <div className="pricing-table-main">
                       <div className="pricing-table-header mb-24 pb-24">
@@ -95,7 +95,7 @@ class Pricing extends Component {
                 </div>
               </div>
             </div>
-            <div className="pricing-faqs container-sm is-revealing">
+            <div className="pricing-faqs container-sm">
               <h4 className="mt-40 mb-32">FAQs</h4>
               <ul className="accordion">
                 <li>

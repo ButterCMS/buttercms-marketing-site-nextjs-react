@@ -5,7 +5,7 @@ class Cta extends Component {
     return (
       <section className="cta section">
         <div className="container">
-          <div className="cta-inner section-inner is-revealing">
+          <div className="cta-inner section-inner">
             <h3 className="section-title mt-0">Still not convinced?</h3>
             <div className="cta-cta">
               <a className="button button-primary button-shadow" href="#">

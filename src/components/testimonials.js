@@ -10,7 +10,7 @@ class Testimonials extends Component {
               <h2 className="section-title mt-0">Testimonials</h2>
             </div>
             <div className="testimonials-wrap">
-              <div className="testimonial text-sm is-revealing">
+              <div className="testimonial text-sm">
                 <div className="testimonial-inner">
                   <div className="testimonial-main">
                     <div className="testimonial-body">
@@ -28,7 +28,7 @@ class Testimonials extends Component {
                   </div>
                 </div>
               </div>
-              <div className="testimonial text-sm is-revealing">
+              <div className="testimonial text-sm">
                 <div className="testimonial-inner">
                   <div className="testimonial-main">
                     <div className="testimonial-body">
@@ -47,7 +47,7 @@ class Testimonials extends Component {
                   </div>
                 </div>
               </div>
-              <div className="testimonial text-sm is-revealing">
+              <div className="testimonial text-sm">
                 <div className="testimonial-inner">
                   <div className="testimonial-main">
                     <div className="testimonial-body">
@@ -65,7 +65,7 @@ class Testimonials extends Component {
                   </div>
                 </div>
               </div>
-              <div className="testimonial text-sm is-revealing">
+              <div className="testimonial text-sm">
                 <div className="testimonial-inner">
                   <div className="testimonial-main">
                     <div className="testimonial-body">
@@ -84,7 +84,7 @@ class Testimonials extends Component {
                   </div>
                 </div>
               </div>
-              <div className="testimonial text-sm is-revealing">
+              <div className="testimonial text-sm">
                 <div className="testimonial-inner">
                   <div className="testimonial-main">
                     <div className="testimonial-body">
@@ -102,7 +102,7 @@ class Testimonials extends Component {
                   </div>
                 </div>
               </div>
-              <div className="testimonial text-sm is-revealing">
+              <div className="testimonial text-sm">
                 <div className="testimonial-inner">
                   <div className="testimonial-main">
                     <div className="testimonial-body">

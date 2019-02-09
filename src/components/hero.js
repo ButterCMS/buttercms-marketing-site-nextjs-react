@@ -1,36 +1,19 @@
 import React, { Component, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import withButter from "../lib/with-butter-cms";
 
-function Hero(props) {
-  const [fields, setFields] = useState({ fields: [] });
-  const [error, setError] = useState({ data: {} });
-  const fetchData = async () => {
-    try {
-      const response = await props.butter.page.retrieve("*", "hero");
-
-      setFields(response.data.data.fields);
-    } catch (error) {
-      setError(error.data);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+function Hero({ data }) {
   return (
     <section className="hero">
-      <div className="hero-left-decoration is-revealing" />
-      <div className="hero-right-decoration is-revealing" />
+      <div className="hero-left-decoration" />
+      <div className="hero-right-decoration" />
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1 className="hero-title mt-0 is-revealing">{fields.title}</h1>
-            <p className="hero-paragraph is-revealing">{fields.sub_title}</p>
-            <p className="hero-cta mb-0 is-revealing">
+            <h1 className="hero-title mt-0">{data.fields.title}</h1>
+            <p className="hero-paragraph">{data.fields.sub_title}</p>
+            <p className="hero-cta mb-0">
               <a className="button button-primary button-shadow" href="#">
-                {fields.button_text}
+                {data.fields.button_text}
               </a>
             </p>
           </div>
@@ -42,7 +25,7 @@ function Hero(props) {
 }
 
 Hero.propTypes = {
-  butter: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };
 
-export default withButter(Hero);
+export default Hero;

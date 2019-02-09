@@ -9,6 +9,7 @@ import Header from "../src/components/header";
 import Hero from "../src/components/hero";
 import Pricing from "../src/components/pricing";
 import Testimonials from "../src/components/testimonials";
+import { DataConsumer } from "../src/lib/with-butter-cms";
 
 class Index extends Component {
   render() {
@@ -17,12 +18,22 @@ class Index extends Component {
         <Head>
           <title>Marketing Site using ButterCMS and Next.js</title>
         </Head>
-        <Hero />
-        <Clients />
-        <Features />
-        <Testimonials />
-        <Pricing />
-        <Cta />
+        <DataConsumer>
+          {({ loading, heroData, clientsData, featuresData }) => {
+            if (loading) return <div>Loading...</div>;
+
+            return (
+              <>
+                <Hero data={heroData} />
+                <Clients data={clientsData} />
+                <Features data={featuresData} />
+                <Testimonials />
+                <Pricing />
+                <Cta />
+              </>
+            );
+          }}
+        </DataConsumer>
       </Fragment>
     );
   }
