@@ -21,9 +21,6 @@ class Footer extends Component {
                 <a href="#">About us</a>
               </li>
               <li>
-                <a href="#">FAQ's</a>
-              </li>
-              <li>
                 <a href="#">Support</a>
               </li>
             </ul>
