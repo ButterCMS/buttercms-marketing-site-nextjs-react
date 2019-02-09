@@ -10,6 +10,7 @@ import Hero from "../src/components/hero";
 import Pricing from "../src/components/pricing";
 import Testimonials from "../src/components/testimonials";
 import { DataConsumer } from "../src/lib/with-butter-cms";
+import Loader from "../src/assets/images/loader.svg";
 
 class Index extends Component {
   render() {
@@ -20,17 +21,32 @@ class Index extends Component {
         </Head>
         <DataConsumer>
           {({ loading, heroData, clientsData, featuresData }) => {
-            if (loading) return <div>Loading...</div>;
+            if (loading)
+              return (
+                <div className="loading">
+                  <img src={Loader} />
+                  <style jsx>
+                    {`
+                      .loading {
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: center;
+                        font-size: 14px;
+                      }
+                    `}
+                  </style>
+                </div>
+              );
 
             return (
-              <>
+              <Fragment>
                 <Hero data={heroData} />
                 <Clients data={clientsData} />
                 <Features data={featuresData} />
                 <Testimonials />
                 <Pricing />
                 <Cta />
-              </>
+              </Fragment>
             );
           }}
         </DataConsumer>
