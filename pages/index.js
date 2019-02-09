@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import Head from "next/head";
 
 import Clients from "../src/components/clients";
-import Cta from "../src/components/cta";
+import Contact from "../src/components/contact";
 import Features from "../src/components/features";
 import Footer from "../src/components/footer";
 import Header from "../src/components/header";
@@ -26,7 +26,8 @@ class Index extends Component {
             clientsData,
             featuresData,
             testimonialsData,
-            pricingData
+            pricingData,
+            contactData
           }) => {
             if (loading)
               return (
@@ -52,7 +53,7 @@ class Index extends Component {
                 <Features data={featuresData} />
                 <Testimonials data={testimonialsData} />
                 <Pricing data={pricingData} />
-                <Cta />
+                <Contact data={contactData} />
               </Fragment>
             );
           }}

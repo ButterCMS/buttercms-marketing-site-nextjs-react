@@ -24,7 +24,8 @@ class DataProvider extends Component {
         butter.page.retrieve("*", "clients"),
         butter.page.retrieve("*", "features"),
         butter.page.retrieve("*", "testimonials"),
-        butter.page.retrieve("*", "pricing")
+        butter.page.retrieve("*", "pricing"),
+        butter.page.retrieve("*", "contact")
       ]);
 
       this.setState({
@@ -33,6 +34,7 @@ class DataProvider extends Component {
         featuresData: response[2].data.data,
         testimonialsData: response[3].data.data,
         pricingData: response[4].data.data,
+        contactData: response[5].data.data,
         loading: false
       });
     } catch (error) {
@@ -49,7 +51,8 @@ class DataProvider extends Component {
           clientsData: this.state.clientsData,
           featuresData: this.state.featuresData,
           testimonialsData: this.state.testimonialsData,
-          pricingData: this.state.pricingData
+          pricingData: this.state.pricingData,
+          contactData: this.state.contactData
         }}
       >
         {this.props.children}
