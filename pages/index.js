@@ -27,7 +27,8 @@ class Index extends Component {
             featuresData,
             testimonialsData,
             pricingData,
-            contactData
+            contactData,
+            generalData
           }) => {
             if (loading)
               return (
@@ -40,6 +41,7 @@ class Index extends Component {
                         display: flex;
                         justify-content: center;
                         font-size: 14px;
+                        height: 100vh;
                       }
                     `}
                   </style>
@@ -48,12 +50,14 @@ class Index extends Component {
 
             return (
               <Fragment>
+                <Header data={generalData} />
                 <Hero data={heroData} />
                 <Clients data={clientsData} />
                 <Features data={featuresData} />
                 <Testimonials data={testimonialsData} />
                 <Pricing data={pricingData} />
                 <Contact data={contactData} />
+                <Footer data={generalData} />
               </Fragment>
             );
           }}

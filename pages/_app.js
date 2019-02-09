@@ -18,13 +18,11 @@ class MyApp extends App {
     return (
       <Container>
         <div className="body-wrap boxed-container">
-          <Header />
-          <main>
-            <DataProvider>
+          <DataProvider>
+            <main>
               <Component {...pageProps} />
-            </DataProvider>
-          </main>
-          <Footer />
+            </main>
+          </DataProvider>
         </div>
       </Container>
     );

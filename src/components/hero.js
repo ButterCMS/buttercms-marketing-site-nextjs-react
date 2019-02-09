@@ -12,7 +12,10 @@ function Hero({ data }) {
             <h1 className="hero-title mt-0">{data.fields.title}</h1>
             <p className="hero-paragraph">{data.fields.sub_title}</p>
             <p className="hero-cta mb-0">
-              <a className="button button-primary button-shadow" href="#">
+              <a
+                className="button button-primary button-shadow"
+                href={data.fields.button_link}
+              >
                 {data.fields.button_text}
               </a>
             </p>

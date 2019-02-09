@@ -10,7 +10,8 @@ class DataProvider extends Component {
     heroData: {},
     clientsData: {},
     featuresData: {},
-    testimonialsData: {}
+    testimonialsData: {},
+    generalData: {}
   };
 
   async componentDidMount() {
@@ -25,7 +26,8 @@ class DataProvider extends Component {
         butter.page.retrieve("*", "features"),
         butter.page.retrieve("*", "testimonials"),
         butter.page.retrieve("*", "pricing"),
-        butter.page.retrieve("*", "contact")
+        butter.page.retrieve("*", "contact"),
+        butter.page.retrieve("*", "general")
       ]);
 
       this.setState({
@@ -35,6 +37,7 @@ class DataProvider extends Component {
         testimonialsData: response[3].data.data,
         pricingData: response[4].data.data,
         contactData: response[5].data.data,
+        generalData: response[6].data.data,
         loading: false
       });
     } catch (error) {
@@ -52,7 +55,8 @@ class DataProvider extends Component {
           featuresData: this.state.featuresData,
           testimonialsData: this.state.testimonialsData,
           pricingData: this.state.pricingData,
-          contactData: this.state.contactData
+          contactData: this.state.contactData,
+          generalData: this.state.generalData
         }}
       >
         {this.props.children}

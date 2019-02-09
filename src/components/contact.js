@@ -10,9 +10,9 @@ function Contact({ data }) {
           <div className="cta-cta">
             <a
               className="button button-primary button-shadow"
-              href={data.fields.cta_link}
+              href={data.fields.button_link}
             >
-              {data.fields.cta_title}
+              {data.fields.button_text}
             </a>
           </div>
         </div>

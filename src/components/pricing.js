@@ -37,9 +37,9 @@ function Pricing({ data }) {
                       <div className="pricing-table-cta">
                         <a
                           className="button button-secondary button-shadow button-block"
-                          href={preset.cta_link}
+                          href={preset.button_link}
                         >
-                          {preset.cta_title}
+                          {preset.button_text}
                         </a>
                       </div>
                     </div>
