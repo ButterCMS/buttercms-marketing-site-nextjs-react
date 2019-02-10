@@ -17,7 +17,7 @@ function Features({ data }) {
           <div className="features-wrap">
             {data.fields.features.map((feature, index) => {
               return (
-                <div className="feature is-revealing" key={index}>
+                <div className="feature " key={index}>
                   <div className="feature-inner">
                     <div className="feature-icon">
                       <img src={FeatureIcon1} alt="Feature 01" />

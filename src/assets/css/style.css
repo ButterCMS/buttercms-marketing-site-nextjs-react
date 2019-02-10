@@ -906,7 +906,7 @@ label {
 .pl-64 {
   padding-left: 64px;
 }
-.sr .has-animations .is-revealing {
+.sr .has-animations . {
   visibility: hidden;
 }
 .button {

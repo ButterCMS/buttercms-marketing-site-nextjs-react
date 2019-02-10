@@ -16,14 +16,16 @@ import Loader from "../src/assets/images/loader.svg";
 const ButterCMSContext = React.createContext();
 const butter = Butter(process.env.BUTTER_CMS_API_KEY);
 
-class Index extends Component {
+class IndexPage extends Component {
   data = {
     loading: true,
     heroData: {},
     clientsData: {},
     featuresData: {},
     testimonialsData: {},
-    generalData: {}
+    contactData: {},
+    generalData: {},
+    faqsData: {}
   };
 
   static async getInitialProps() {
@@ -131,4 +133,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default IndexPage;

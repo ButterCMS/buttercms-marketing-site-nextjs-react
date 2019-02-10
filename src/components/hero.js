@@ -4,18 +4,14 @@ import PropTypes from "prop-types";
 function Hero({ data }) {
   return (
     <section className="hero">
-      <div className="hero-left-decoration is-revealing" />
-      <div className="hero-right-decoration is-revealing" />
+      <div className="hero-left-decoration " />
+      <div className="hero-right-decoration " />
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1 className="hero-title mt-0 is-revealing">
-              {data.fields.title}
-            </h1>
-            <p className="hero-paragraph is-revealing">
-              {data.fields.sub_title}
-            </p>
-            <p className="hero-cta mb-0 is-revealing">
+            <h1 className="hero-title mt-0 ">{data.fields.title}</h1>
+            <p className="hero-paragraph ">{data.fields.sub_title}</p>
+            <p className="hero-cta mb-0 ">
               <a
                 className="button button-primary button-shadow"
                 href={data.fields.button_link}

@@ -13,7 +13,7 @@ function Pricing({ data }) {
             <div className="pricing-tables-wrap">
               {data.fields.pricing.map((preset, index) => {
                 return (
-                  <div className="pricing-table is-revealing" key={index}>
+                  <div className="pricing-table " key={index}>
                     <div className="pricing-table-inner">
                       <div className="pricing-table-main">
                         <div className="pricing-table-header mb-24 pb-24">

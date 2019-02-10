@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 function FAQ({ data }) {
   return (
-    <section className="pricing section">
+    <section className="pricing section has-animations">
       <div className="container">
         <div className="pricing-inner section-inner">
-          <div className="pricing-faqs container-sm is-revealing">
+          <div className="pricing-faqs container-sm ">
             <h4 className="mt-40 mb-32">{data.fields.title}</h4>
             <ul className="accordion">
               {data.fields.faqs.map((faq, index) => {

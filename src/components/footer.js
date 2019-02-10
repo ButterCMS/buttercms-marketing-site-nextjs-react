@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Link from "next/link";
 
 function Footer({ data }) {
   return (
@@ -7,15 +8,19 @@ function Footer({ data }) {
       <div className="container">
         <div className="site-footer-inner">
           <div className="brand footer-brand">
-            <a href="/">
-              <img src={data.fields.logo} alt={data.fields.company_name} />
-            </a>
+            <Link href="/">
+              <a>
+                <img src={data.fields.logo} alt={data.fields.company_name} />
+              </a>
+            </Link>
           </div>
           <ul className="footer-links list-reset">
             {data.fields.navigation_links.map((link, index) => {
               return (
                 <li key={index}>
-                  <a href={link.link}>{link.text}</a>
+                  <Link href={link.link}>
+                    <a>{link.text}</a>
+                  </Link>
                 </li>
               );
             })}

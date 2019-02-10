@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Link from "next/link";
 
 function Header({ data }) {
   return (
@@ -8,9 +9,11 @@ function Header({ data }) {
         <div className="site-header-inner">
           <div className="brand header-brand">
             <h1 className="m-0">
-              <a href="/">
-                <img src={data.fields.logo} alt={data.fields.company_name} />
-              </a>
+              <Link href="/">
+                <a>
+                  <img src={data.fields.logo} alt={data.fields.company_name} />
+                </a>
+              </Link>
             </h1>
           </div>
         </div>

@@ -5,7 +5,7 @@ function Contact({ data }) {
   return (
     <section className="cta section">
       <div className="container">
-        <div className="cta-inner section-inner is-revealing">
+        <div className="cta-inner section-inner ">
           <h3 className="section-title mt-0">{data.fields.description}</h3>
           <div className="cta-cta">
             <a

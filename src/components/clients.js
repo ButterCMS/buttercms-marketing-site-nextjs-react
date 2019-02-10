@@ -10,7 +10,7 @@ function Clients({ data }) {
             <ul className="list-reset mb-0">
               {data.fields.clients.map((client, index) => {
                 return (
-                  <li key={index} className="is-revealing">
+                  <li key={index} className="">
                     <img src={client.image} alt={client.name} />
                   </li>
                 );
