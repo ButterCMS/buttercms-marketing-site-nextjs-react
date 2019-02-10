@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import App, { Container } from "next/app";
 import dynamic from "next/dynamic";
+import withNProgress from "next-nprogress";
 
 import "../src/assets/css/style.css";
 
@@ -24,4 +25,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default withNProgress()(MyApp);
