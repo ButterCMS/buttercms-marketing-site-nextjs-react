@@ -10,6 +10,7 @@ import Header from "../src/components/header";
 import Hero from "../src/components/hero";
 import Pricing from "../src/components/pricing";
 import Testimonials from "../src/components/testimonials";
+import FAQ from "../src/components/faq";
 import Loader from "../src/assets/images/loader.svg";
 
 const ButterCMSContext = React.createContext();
@@ -34,7 +35,8 @@ class Index extends Component {
         butter.page.retrieve("*", "testimonials"),
         butter.page.retrieve("*", "pricing"),
         butter.page.retrieve("*", "contact"),
-        butter.page.retrieve("*", "general")
+        butter.page.retrieve("*", "general"),
+        butter.page.retrieve("*", "faqs")
       ]);
 
       this.data = {
@@ -45,6 +47,7 @@ class Index extends Component {
         pricingData: response[4].data.data,
         contactData: response[5].data.data,
         generalData: response[6].data.data,
+        faqsData: response[7].data.data,
         loading: false
       };
     } catch (error) {
@@ -73,7 +76,8 @@ class Index extends Component {
             testimonialsData: data.testimonialsData,
             pricingData: data.pricingData,
             contactData: data.contactData,
-            generalData: data.generalData
+            generalData: data.generalData,
+            faqsData: data.faqsData
           }}
         >
           <ButterCMSContext.Consumer>
@@ -85,7 +89,8 @@ class Index extends Component {
               testimonialsData,
               pricingData,
               contactData,
-              generalData
+              generalData,
+              faqsData
             }) => {
               if (loading)
                 return (
@@ -113,6 +118,7 @@ class Index extends Component {
                   <Features data={featuresData} />
                   <Testimonials data={testimonialsData} />
                   <Pricing data={pricingData} />
+                  <FAQ data={faqsData} />
                   <Contact data={contactData} />
                   <Footer data={generalData} />
                 </Fragment>

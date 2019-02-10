@@ -12,7 +12,7 @@ function Testimonials({ data }) {
           <div className="testimonials-wrap">
             {data.fields.testimonials.map((testimonial, index) => {
               return (
-                <div className="testimonial text-sm" key={index}>
+                <div className="testimonial text-sm is-revealing" key={index}>
                   <div className="testimonial-inner">
                     <div className="testimonial-main">
                       <div className="testimonial-body">
