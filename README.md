@@ -10,6 +10,10 @@ This app demonstrates how you can build a marketing site using Next.js on the Fr
 
 <!-- prettier-ignore-end -->
 
+## Demo
+
+Please check out the Netlify demo at https://buttercms-marketing-site-nextjs-react.netlify.com/.
+
 ## Development
 
 ```sh
