@@ -23,7 +23,7 @@ class BlogsPage extends Component {
     try {
       const response = await Promise.all([
         butter.page.retrieve("*", "general"),
-        butter.page.retrieve("*", "blogs"),
+        butter.post.list(),
         butter.page.retrieve("*", "contact")
       ]);
 
