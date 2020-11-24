@@ -14,13 +14,11 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
-        <div className="body-wrap boxed-container">
-          <main>
-            <Component {...pageProps} />
-          </main>
-        </div>
-      </Container>
+      <div className="body-wrap boxed-container">
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </div>
     );
   }
 }

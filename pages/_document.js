@@ -1,11 +1,11 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 import Favicon from "../src/assets/images/favicon.ico";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <link rel="icon" type="image/x-icon" href={Favicon} />
           <link
@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
