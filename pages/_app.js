@@ -1,12 +1,18 @@
 import React from "react";
 
+import Router from "next/router";
+
+import Butter from "buttercms";
+
+import Layout from "../src/components/layout";
+
 import Loader from "../src/assets/images/loader.svg";
 
 import "../src/assets/css/style.css";
 
-import Router from "next/router";
+const butter = Butter(process.env.BUTTER_CMS_API_KEY);
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps, generalData }) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -48,9 +54,26 @@ export default function App({ Component, pageProps }) {
             <img src={Loader} />
           </div>
         ) : (
-          <Component {...pageProps} />
+          <Layout
+            companyName={generalData.company_name}
+            logo={generalData.logo}
+            navigationLinks={generalData.navigation_links}
+            facebookUrl={generalData.facebook_url}
+            twitterUrl={generalData.twitterUrl}
+            googleUrl={generalData.google_url}
+          >
+            <Component {...pageProps} />
+          </Layout>
         )}
       </main>
     </div>
   );
 }
+
+App.getInitialProps = async () => {
+  const generalData = (await butter.page.retrieve("*", "marketing-page")).data
+    .data.fields.general;
+  return { generalData };
+};
+
+export default App;
