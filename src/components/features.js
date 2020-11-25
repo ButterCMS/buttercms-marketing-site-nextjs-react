@@ -2,30 +2,35 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import FeatureIcon1 from "../assets/images/feature-icon-01.svg";
+import Feature, { FeaturePropTypes } from "./feature";
 
-function Features({ data }) {
+export const FeaturesPropTypes = {
+  headline: PropTypes.string.isRequired,
+  subheadline: PropTypes.string,
+  features: PropTypes.arrayOf(PropTypes.exact(FeaturePropTypes)),
+};
+
+function Features({ headline, subheadline, features }) {
   return (
     <section className="features section text-center">
       <div className="container">
         <div className="features-inner section-inner has-top-divider">
           <div className="features-header text-center">
             <div className="container-sm">
-              <h2 className="section-title mt-0">{data.fields.title}</h2>
-              <p className="section-paragraph mb-0">{data.fields.sub_title}</p>
+              <h2 className="section-title mt-0">{headline}</h2>
+              {subheadline && (
+                <p className="section-paragraph mb-0">{subheadline}</p>
+              )}
             </div>
           </div>
           <div className="features-wrap">
-            {data.fields.features.map((feature, index) => {
+            {features.map((feature, index) => {
               return (
-                <div className="feature " key={index}>
-                  <div className="feature-inner">
-                    <div className="feature-icon">
-                      <img src={FeatureIcon1} alt="Feature 01" />
-                    </div>
-                    <h4 className="feature-title">{feature.title}</h4>
-                    <p className="text-sm">{feature.sub_title}</p>
-                  </div>
-                </div>
+                <Feature
+                  key={index}
+                  headline={feature.headline}
+                  subheadline={feature.subheadline}
+                ></Feature>
               );
             })}
           </div>
@@ -35,8 +40,6 @@ function Features({ data }) {
   );
 }
 
-Features.propTypes = {
-  data: PropTypes.object.isRequired
-};
+Features.propTypes = FeaturesPropTypes;
 
 export default Features;

@@ -1,31 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Testimonials({ data }) {
+import Testimonial, { TestimonialPropTypes } from "./testimonial";
+
+export const TestimonialsPropTypes = {
+  headline: PropTypes.string.isRequired,
+  testimonials: PropTypes.arrayOf(PropTypes.exact(TestimonialPropTypes)),
+};
+
+function Testimonials({ headline, testimonials }) {
   return (
     <section className="testimonials section">
       <div className="container">
         <div className="testimonials-inner section-inner">
           <div className="testimonials-header text-center text-light">
-            <h2 className="section-title mt-0">{data.fields.title}</h2>
+            <h2 className="section-title mt-0">{headline}</h2>
           </div>
           <div className="testimonials-wrap">
-            {data.fields.testimonials.map((testimonial, index) => {
+            {testimonials.map(({ body, author }, index) => {
               return (
-                <div className="testimonial text-sm " key={index}>
-                  <div className="testimonial-inner">
-                    <div className="testimonial-main">
-                      <div className="testimonial-body">
-                        <p>{testimonial.body}</p>
-                      </div>
-                    </div>
-                    <div className="testimonial-footer">
-                      <div className="testimonial-name">
-                        <a href="#">@{testimonial.author}</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Testimonial
+                  key={index}
+                  body={body}
+                  author={author}
+                ></Testimonial>
               );
             })}
           </div>
@@ -35,8 +33,6 @@ function Testimonials({ data }) {
   );
 }
 
-Testimonials.propTypes = {
-  data: PropTypes.object.isRequired
-};
+Testimonials.propTypes = TestimonialsPropTypes;
 
 export default Testimonials;

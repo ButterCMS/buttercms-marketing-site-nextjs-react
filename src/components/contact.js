@@ -1,18 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Contact({ data }) {
+export const ContactPropTypes = {
+  description: PropTypes.string,
+  buttonLink: PropTypes.string,
+  buttonText: PropTypes.string,
+};
+
+function Contact({ description, buttonLink, buttonText }) {
   return (
     <section className="cta section">
       <div className="container">
         <div className="cta-inner section-inner ">
-          <h3 className="section-title mt-0">{data.fields.description}</h3>
+          <h3 className="section-title mt-0">{description}</h3>
           <div className="cta-cta">
             <a
               className="button button-primary button-shadow"
-              href={data.fields.button_link}
+              href={buttonLink}
             >
-              {data.fields.button_text}
+              {buttonText}
             </a>
           </div>
         </div>
@@ -21,8 +27,6 @@ function Contact({ data }) {
   );
 }
 
-Contact.propTypes = {
-  data: PropTypes.object.isRequired
-};
+Contact.propTypes = ContactPropTypes;
 
 export default Contact;

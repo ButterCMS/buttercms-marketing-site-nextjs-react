@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
-function Header({ data }) {
+function Header({ logo, companyName }) {
   return (
     <header className="site-header">
       <div className="container">
@@ -11,7 +11,11 @@ function Header({ data }) {
             <h1 className="m-0">
               <Link href="/">
                 <a>
-                  <img src={data.fields.logo} alt={data.fields.company_name} />
+                  <img
+                    src={logo}
+                    alt={companyName}
+                    style={{ maxHeight: "50px" }}
+                  />
                 </a>
               </Link>
             </h1>
@@ -23,7 +27,8 @@ function Header({ data }) {
 }
 
 Header.propTypes = {
-  data: PropTypes.object.isRequired
+  companyName: PropTypes.string.isRequired,
+  logo: PropTypes.string,
 };
 
 export default Header;

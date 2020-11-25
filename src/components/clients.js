@@ -1,19 +1,21 @@
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-function Clients({ data }) {
+import Client, { ClientPropTypes } from "./client";
+
+export const ClientsPropTypes = {
+  clients: PropTypes.arrayOf(PropTypes.exact(ClientPropTypes)),
+};
+
+function Clients({ clients }) {
   return (
     <section className="clients section">
       <div className="container">
         <div className="clients-inner section-inner has-top-divider">
           <div className="container-sm">
             <ul className="list-reset mb-0">
-              {data.fields.clients.map((client, index) => {
-                return (
-                  <li key={index} className="">
-                    <img src={client.image} alt={client.name} />
-                  </li>
-                );
+              {clients.map(({ image, name }, index) => {
+                return <Client key={index} name={name} image={image}></Client>;
               })}
             </ul>
           </div>
@@ -23,8 +25,6 @@ function Clients({ data }) {
   );
 }
 
-Clients.propTypes = {
-  data: PropTypes.object.isRequired
-};
+Clients.propTypes = ClientsPropTypes;
 
 export default Clients;

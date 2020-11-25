@@ -1,8 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
+import NavigationLink from "./navigation-link";
 
-function Footer({ data }) {
+function Footer({
+  logo,
+  companyName,
+  navigationLinks,
+  facebookUrl,
+  twitterUrl,
+  googleUrl,
+}) {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="site-footer">
       <div className="container">
@@ -10,24 +19,26 @@ function Footer({ data }) {
           <div className="brand footer-brand">
             <Link href="/">
               <a>
-                <img src={data.fields.logo} alt={data.fields.company_name} />
+                <img
+                  src={logo}
+                  alt={companyName}
+                  style={{ maxHeight: "40px" }}
+                />
               </a>
             </Link>
           </div>
           <ul className="footer-links list-reset">
-            {data.fields.navigation_links.map((link, index) => {
+            {navigationLinks.map(({ link, text }, index) => {
               return (
                 <li key={index}>
-                  <Link href={link.link}>
-                    <a>{link.text}</a>
-                  </Link>
+                  <NavigationLink link={link} text={text}></NavigationLink>
                 </li>
               );
             })}
           </ul>
           <ul className="footer-social-links list-reset">
             <li>
-              <a href={data.fields.facebook_url}>
+              <a href={facebookUrl}>
                 <span className="screen-reader-text">Facebook</span>
                 <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -38,7 +49,7 @@ function Footer({ data }) {
               </a>
             </li>
             <li>
-              <a href={data.fields.twitter_url}>
+              <a href={twitterUrl}>
                 <span className="screen-reader-text">Twitter</span>
                 <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -49,7 +60,7 @@ function Footer({ data }) {
               </a>
             </li>
             <li>
-              <a href={data.fields.google_url}>
+              <a href={googleUrl}>
                 <span className="screen-reader-text">Google</span>
                 <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -61,8 +72,7 @@ function Footer({ data }) {
             </li>
           </ul>
           <div className="footer-copyright">
-            &copy; {new Date().getFullYear()} {data.fields.company_name}, all
-            rights reserved
+            &copy; {currentYear} {companyName}, all rights reserved
           </div>
         </div>
       </div>
@@ -71,7 +81,12 @@ function Footer({ data }) {
 }
 
 Footer.propTypes = {
-  data: PropTypes.object.isRequired
+  logo: PropTypes.string,
+  companyName: PropTypes.string.isRequired,
+  navigationLinks: PropTypes.array,
+  facebookUrl: PropTypes.string,
+  twitterUrl: PropTypes.string,
+  googleUrl: PropTypes.string,
 };
 
 export default Footer;
