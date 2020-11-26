@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Post, { PostPropTypes } from "./post";
 
 export const PostsPropTypes = {
-  posts: PropTypes.arrayOf(PropTypes.exact(PostPropTypes)),
+  posts: PropTypes.arrayOf(PropTypes.shape(PostPropTypes)),
 };
 
 function Posts({ posts }) {

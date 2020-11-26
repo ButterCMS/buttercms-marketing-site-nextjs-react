@@ -1,11 +1,8 @@
 import React from "react";
 import Head from "next/head";
 
-import Butter from "buttercms";
-
+import { getBlogPosts } from "../lib/api";
 import Posts from "../src/components/posts";
-
-const butter = Butter(process.env.BUTTER_CMS_API_KEY);
 
 export default function BlogsPage({ posts }) {
   return (
@@ -24,7 +21,7 @@ export default function BlogsPage({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = (await butter.post.list()).data.data;
+  const posts = await getBlogPosts();
 
   return {
     props: { posts },

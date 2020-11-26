@@ -1,14 +1,11 @@
 import React from "react";
 import Head from "next/head";
 
-import Butter from "buttercms";
-
 import Section from "../src/components/section";
-
-const butter = Butter(process.env.BUTTER_CMS_API_KEY);
+import { getSinglePage } from "../lib/api";
 
 export default function Index({ marketingPage }) {
-  const seo = marketingPage.data.fields.seo;
+  const seo = marketingPage.fields.seo;
 
   return (
     <>
@@ -17,7 +14,7 @@ export default function Index({ marketingPage }) {
         <meta name="description" content={seo.meta_description} />
       </Head>
 
-      {marketingPage.data.fields.sections.map(({ type, fields }, index) => (
+      {marketingPage.fields.sections.map(({ type, fields }, index) => (
         <Section key={index} type={type} fields={fields}></Section>
       ))}
     </>
@@ -25,8 +22,7 @@ export default function Index({ marketingPage }) {
 }
 
 export async function getStaticProps() {
-  const marketingPage = (await butter.page.retrieve("*", "marketing-page"))
-    .data;
+  const marketingPage = await getSinglePage("marketing-page");
   return {
     props: { marketingPage },
   };
