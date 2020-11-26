@@ -12,7 +12,7 @@ import "../src/assets/css/style.css";
 
 const butter = Butter(process.env.BUTTER_CMS_API_KEY);
 
-function App({ Component, pageProps, generalData }) {
+function App({ Component, pageProps, general, contact }) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -55,12 +55,13 @@ function App({ Component, pageProps, generalData }) {
           </div>
         ) : (
           <Layout
-            companyName={generalData.company_name}
-            logo={generalData.logo}
-            navigationLinks={generalData.navigation_links}
-            facebookUrl={generalData.facebook_url}
-            twitterUrl={generalData.twitterUrl}
-            googleUrl={generalData.google_url}
+            companyName={general.company_name}
+            logo={general.logo}
+            navigationLinks={general.navigation_links}
+            facebookUrl={general.facebook_url}
+            twitterUrl={general.twitterUrl}
+            googleUrl={general.google_url}
+            contact={contact}
           >
             <Component {...pageProps} />
           </Layout>
@@ -71,9 +72,9 @@ function App({ Component, pageProps, generalData }) {
 }
 
 App.getInitialProps = async () => {
-  const generalData = (await butter.page.retrieve("*", "marketing-page")).data
-    .data.fields.general;
-  return { generalData };
+  const generalData = (await butter.page.retrieve("*", "general-company-data"))
+    .data.data.fields;
+  return { general: generalData.general, contact: generalData.contact };
 };
 
 export default App;

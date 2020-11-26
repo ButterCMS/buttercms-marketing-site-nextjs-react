@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Hero from "./hero";
-import Contact from "./contact";
 import Clients, { ClientsPropTypes } from "./clients";
 import Features, { FeaturesPropTypes } from "./features";
 import Pricing, { PricingPropTypes } from "./pricing";
@@ -20,12 +19,6 @@ export const SectionPropTypes = {
       cta_button_link: PropTypes.string,
     }),
     PropTypes.exact(ClientsPropTypes),
-    // Contact section
-    PropTypes.exact({
-      description: PropTypes.string,
-      button_link: PropTypes.string,
-      button_text: PropTypes.string,
-    }),
     PropTypes.exact(FeaturesPropTypes),
     PropTypes.exact(PricingPropTypes),
     PropTypes.exact(TestimonialsPropTypes),
@@ -74,16 +67,6 @@ function Section({ type, fields }) {
 
   if (type === "faqs") {
     return <FAQ headline={fields.headline} questions={fields.questions} />;
-  }
-
-  if (type === "contact") {
-    return (
-      <Contact
-        description={fields.description}
-        buttonLink={fields.button_link}
-        buttonText={fields.button_text}
-      />
-    );
   }
 
   return "";
