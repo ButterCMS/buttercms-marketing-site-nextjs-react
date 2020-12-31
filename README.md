@@ -10,37 +10,48 @@ Please check out the ZEIT demo at https://testing-nextjs-apps.ghoshnirmalya.now.
 
 ## Development
 
-```sh
-$ git clone https://github.com/ButterCMS/buttercms-marketing-site-nextjs-react
-$ cd buttercms-marketing-site-nextjs-react
-$ yarn install
-```
+### Step 1. Create an account on [ButterCMS](https://buttercms.com/)
 
-If you prefer `npm`, you can do `npm install` instead of `yarn install`.
+Register on ButterCMS and get your Read API Token which could be found on home or settings pages
 
-#### Running the app
+### Step 2. Clone and cd into the project
 
 ```sh
-$ yarn dev
+git clone https://github.com/ButterCMS/buttercms-marketing-site-nextjs-react
+cd buttercms-marketing-site-nextjs-react
 ```
 
-If you prefer `npm`, you can do `npm run dev` instead of `yarn dev`.
+### Step 3. Set up environment variable
+
+Copy `.env.sample` file to `.env` file and set `BUTTER_CMS_API_KEY` as your Read Api Token
+
+### Step 4. Development
+
+#### Running the project
+
+```sh
+yarn install
+yarn dev
+```
+
+or
+
+```sh
+npm install
+npm run dev
+```
 
 #### Building the app
 
 ```sh
-$ yarn build
+yarn build
 ```
 
-If you prefer `npm`, you can do `npm run build` instead of `yarn build`.
-
-#### Exporting the app
+or
 
 ```sh
-$ yarn export
+npm run build
 ```
-
-If you prefer `npm`, you can do `npm run export` instead of `yarn export`.
 
 ## Built With
 
@@ -51,9 +62,9 @@ If you prefer `npm`, you can do `npm run export` instead of `yarn export`.
 
 ## Deploying
 
-1. Create a ZEIT account at https://zeit.co/signup and download [the CLI](https://zeit.co/download)
-2. Add the API key as a secret `now secrets add butter-cms-api-key "YOUR_API_KEY"`
-3. Run `now` at the project root
+1. Create a Vercel account at https://vercel.com/signup and download [the CLI](https://vercel.com/download)
+2. Add the API key as a secret `vercel secrets add butter-cms-api-key "YOUR_API_KEY"`
+3. Run `vercel` at the project root
 
 ## License
 
