@@ -1049,10 +1049,10 @@ label {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.15s ease-in-out, opacity 0.15s;
 }
 .is-open .accordion-body {
   opacity: 1;
+  max-height: unset;
 }
 .accordion-body p:last-child {
   margin-bottom: 24px;
