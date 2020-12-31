@@ -6,7 +6,7 @@ This app demonstrates how you can build a marketing site using Next.js on the Fr
 
 ## Demo
 
-Please check out the ZEIT demo at https://testing-nextjs-apps.ghoshnirmalya.now.sh/.
+Please check out the ZEIT demo at https://buttercms-marketing-site-nextjs-react.orlyohreally.vercel.app/.
 
 ## Development
 
