@@ -3,16 +3,12 @@ import React from "react";
 import Router from "next/router";
 
 import Loader from "@/images/loader.svg";
-
 import "@/styles/style.css";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
-    console.log("adding effecting");
-    import("../src/assets/js/main.js");
-
     const showLoader = () => {
       setLoading(true);
     };

@@ -1,6 +1,20 @@
+import React from "react";
+
 import Question from "./question";
 
 export default function FAQ({ headline, questions }) {
+  React.useEffect(() => {
+    const sr = ScrollReveal();
+    sr.reveal(".pricing-faqs", {
+      duration: 600,
+      distance: "40px",
+      easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      interval: 100,
+      origin: "bottom",
+      viewFactor: 0.2,
+    });
+  });
+
   return (
     <section className="pricing section has-animations">
       <div className="container">

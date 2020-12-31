@@ -1,6 +1,6 @@
 import Testimonial from "./testimonial";
 
-export default function Testimonials({ headline, testimonials }) {
+export default function Testimonials({ headline, testimonials, animated }) {
   return (
     <section className="testimonials section">
       <div className="container">
@@ -15,6 +15,7 @@ export default function Testimonials({ headline, testimonials }) {
                 key={index}
                 body={body}
                 author={author}
+                animated={animated}
               ></Testimonial>
             ))}
           </div>

@@ -36,6 +36,7 @@ export default function Section({ type, fields }) {
       <Testimonials
         headline={fields.headline}
         testimonials={fields.testimonials}
+        animated={true}
       />
     );
   }

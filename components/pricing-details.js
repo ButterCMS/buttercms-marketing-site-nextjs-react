@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function PricingDetails({
   headline,
   price,
@@ -5,6 +7,18 @@ export default function PricingDetails({
   buttonLink,
   buttonText,
 }) {
+  React.useEffect(() => {
+    const sr = ScrollReveal();
+    sr.reveal(".pricing-table", {
+      duration: 600,
+      distance: "40px",
+      easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      interval: 100,
+      origin: "bottom",
+      viewFactor: 0.2,
+    });
+  });
+
   return (
     <div className="pricing-table">
       <div className="pricing-table-inner">
