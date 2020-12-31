@@ -1,6 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
-import Favicon from "../src/assets/images/favicon.ico";
+import Favicon from "@/images/favicon.ico";
 
 export default class MyDocument extends Document {
   render() {
@@ -14,7 +14,8 @@ export default class MyDocument extends Document {
           />
           <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js" />
         </Head>
-        <body className="is-boxed">
+
+        <body className="is-boxed has-animations">
           <Main />
           <NextScript />
         </body>

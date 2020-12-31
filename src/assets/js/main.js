@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const doc = document.documentElement;
 
   doc.classList.remove("no-js");
@@ -15,42 +15,42 @@
       distance: "60px",
       easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
       origin: "bottom",
-      interval: 150
+      interval: 150,
     });
 
     sr.reveal(".hero-right-decoration", {
       duration: 1000,
       distance: "40px",
       easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-      origin: "top"
+      origin: "top",
     });
 
     sr.reveal(".hero-left-decoration", {
       duration: 1000,
       distance: "40px",
       easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-      origin: "bottom"
+      origin: "bottom",
     });
 
     sr.reveal(".clients li", {
       delay: 300,
       duration: 1000,
       rotate: {
-        y: 50
+        y: 50,
       },
       easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-      interval: 150
+      interval: 150,
     });
 
     sr.reveal(
-      ".feature, .tabs-links li, .testimonial, .pricing-table, .pricing-faqs, .cta-inner",
+      ".feature, .tabs-links li, .pricing-table, .pricing-faqs, .cta-inner",
       {
         duration: 600,
         distance: "40px",
         easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
         interval: 100,
         origin: "bottom",
-        viewFactor: 0.2
+        viewFactor: 0.2,
       }
     );
   }
@@ -60,7 +60,7 @@
 
   if (accordionEl.length) {
     for (let i = 0; i < accordionEl.length; i++) {
-      accordionEl[i].addEventListener("click", function() {
+      accordionEl[i].addEventListener("click", function () {
         this.parentNode.classList.toggle("is-open");
         const panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
@@ -77,7 +77,7 @@
 
   if (tabLinksAll.length) {
     for (let i = 0; i < tabLinksAll.length; i++) {
-      tabLinksAll[i].addEventListener("click", function(e) {
+      tabLinksAll[i].addEventListener("click", function (e) {
         e.preventDefault();
         let tabLinksContainer = tabLinksAll[i].parentNode.parentNode;
         let tabPanels = tabLinksContainer.nextElementSibling.getElementsByClassName(

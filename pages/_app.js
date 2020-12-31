@@ -2,20 +2,15 @@ import React from "react";
 
 import Router from "next/router";
 
-import Butter from "buttercms";
+import Loader from "@/images/loader.svg";
 
-import Layout from "../src/components/layout";
+import "@/styles/style.css";
 
-import Loader from "../src/assets/images/loader.svg";
-
-import "../src/assets/css/style.css";
-
-const butter = Butter(process.env.BUTTER_CMS_API_KEY);
-
-function App({ Component, pageProps, general, contact }) {
+export default function App({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
+    console.log("adding effecting");
     import("../src/assets/js/main.js");
 
     const showLoader = () => {
@@ -54,27 +49,9 @@ function App({ Component, pageProps, general, contact }) {
             <img src={Loader} />
           </div>
         ) : (
-          <Layout
-            companyName={general.company_name}
-            logo={general.logo}
-            navigationLinks={general.navigation_links}
-            facebookUrl={general.facebook_url}
-            twitterUrl={general.twitterUrl}
-            googleUrl={general.google_url}
-            contact={contact}
-          >
-            <Component {...pageProps} />
-          </Layout>
+          <Component {...pageProps} />
         )}
       </main>
     </div>
   );
 }
-
-App.getInitialProps = async () => {
-  const generalData = (await butter.page.retrieve("*", "general-company-data"))
-    .data.data.fields;
-  return { general: generalData.general, contact: generalData.contact };
-};
-
-export default App;

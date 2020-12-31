@@ -1,14 +1,10 @@
-const withCSS = require("@zeit/next-css");
+const withPlugins = require("next-compose-plugins");
 const withImages = require("next-images");
-const webpack = require("webpack");
 
-require("dotenv").config();
+const nextConfig = {
+  images: {
+    domains: ["cdn.buttercms.com"],
+  },
+};
 
-module.exports = withImages(
-  withCSS({
-    webpack: config => {
-      config.plugins.push(new webpack.EnvironmentPlugin(process.env));
-      return config;
-    }
-  })
-);
+module.exports = withPlugins([[withImages]], nextConfig);

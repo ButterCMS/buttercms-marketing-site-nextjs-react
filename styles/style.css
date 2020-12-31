@@ -1818,7 +1818,6 @@ main {
     justify-content: flex-end;
   }
   .footer-links {
-    order: 1;
     margin-bottom: 0;
   }
 }
