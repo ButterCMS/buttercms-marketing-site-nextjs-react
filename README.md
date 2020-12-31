@@ -10,9 +10,15 @@ Please check out the ZEIT demo at https://buttercms-marketing-site-nextjs-react.
 
 ## Development
 
-### Step 1. Create an account on [ButterCMS](https://buttercms.com/)
+### Step 1. Create an account on [ButterCMS](https://buttercms.com/) and create content
 
-Register on ButterCMS and get your Read API Token which could be found on home or settings pages
+Register on ButterCMS and get your Read API Token which could be found on home or settings pages. To run the project for your own account you need to create pages and collections in Butter which are used in the application:
+
+-   Marketing page with slug `marketing-page` and [this]("/images/data-structures/marketing-page.png") structure - data for sections of the marketing page
+-   General data page with slug `general-data`) and [this]("/images/data-structures/general-data-page.png") structure - general company data i.e. logo and name
+-   Contact form page with slug `contact-form` and [this]("/images/data-structures/contact-form-page.png") structure - content for contact form
+-   Main navigation links collection with slug `main-navigation-links` with [this]("/images/data-structures/main-navigation-links-collection.png")
+-   Social links collection with slug `social-links` with [this]("/images/data-structures/social-links-collection.png") structure
 
 ### Step 2. Clone and cd into the project
 
