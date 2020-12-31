@@ -4,7 +4,6 @@ This app demonstrates how you can build a marketing site using Next.js on the Fr
 
 <img src="https://user-images.githubusercontent.com/6391763/54627869-47b56500-4a9a-11e9-812e-ddb71b56f56e.png" alt="Preview">
 
-
 ## Demo
 
 Please check out the ZEIT demo at https://testing-nextjs-apps.ghoshnirmalya.now.sh/.
@@ -45,10 +44,10 @@ If you prefer `npm`, you can do `npm run export` instead of `yarn export`.
 
 ## Built With
 
-* [Blue](https://cruip.com/blue/) - Landing page template from [Cruip](https://cruip.com/).
-* [Next.js](https://nextjs.org/) - The React.js framework for building SSR web apps.
-* [React](https://facebook.github.io/react/) - A JavaScript library for building user interfaces
-* [Screely](https://www.screely.com/) - Instantly turn your screenshot into a beautiful design mockup
+-   [Blue](https://cruip.com/blue/) - Landing page template from [Cruip](https://cruip.com/).
+-   [Next.js](https://nextjs.org/) - The React.js framework for building SSR web apps.
+-   [React](https://facebook.github.io/react/) - A JavaScript library for building user interfaces
+-   [Screely](https://www.screely.com/) - Instantly turn your screenshot into a beautiful design mockup
 
 ## Deploying
 
