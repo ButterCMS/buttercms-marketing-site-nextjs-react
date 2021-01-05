@@ -12,7 +12,6 @@
     "dependencies": {
         "buttercms": "^1.2.3",
         "next": "latest",
-        "next-compose-plugins": "^2.2.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
     },
