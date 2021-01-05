@@ -4,7 +4,6 @@ import Header from "@/components/header";
 import Section from "@/components/section";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
-// import runAnimation from "../src/assets/js/main";
 
 import {
     getContactForm,
