@@ -1,8 +1,8 @@
 import React from "react";
 
 import Router from "next/router";
+import Image from "next/image";
 
-import Loader from "@/images/loader.svg";
 import "@/styles/style.css";
 
 export default function App({ Component, pageProps }) {
@@ -42,7 +42,11 @@ export default function App({ Component, pageProps }) {
                             height: "100vh",
                         }}
                     >
-                        <img src={Loader} />
+                        <Image
+                            src="/images/loader.svg"
+                            height={50}
+                            width={50}
+                        />
                     </div>
                 ) : (
                     <Component {...pageProps} />

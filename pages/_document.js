@@ -1,13 +1,15 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
-import Favicon from "@/images/favicon.ico";
-
 export default class MyDocument extends Document {
     render() {
         return (
             <Html>
                 <Head>
-                    <link rel="icon" type="image/x-icon" href={Favicon} />
+                    <link
+                        rel="icon"
+                        type="image/x-icon"
+                        href="/images/favicon.ico"
+                    />
                     <link
                         href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Arimo:400,700"
                         rel="stylesheet"
